@@ -9,7 +9,7 @@ my $debugLevel = 0;
 my $z = 0;
 my $yMin = -1;
 my $yMax = +1;
-my $zMax=200;
+my $zMax=100;
 my $zMin=0;
 
 my @ext = ('.set');
@@ -37,7 +37,10 @@ open(TEMPLATE,"$fullname") || die "Unable to open template file $fullname: $?\n"
 
 my @templateLines=<TEMPLATE>;
 
-for $z (0..200) {
+print "#File produced using the following command:\n";
+print "#perl $0 $fullname $baseSetFileName $map2Dname $map3Dname\n";
+
+for $z (0..100) {
   if ($debugLevel > 0 ) {
     print $z."\n";
   }
